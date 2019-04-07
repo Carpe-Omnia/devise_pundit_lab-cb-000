@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def signout 
+    session.clear 
+    redirect_to '/'
+  end   
 
 end
