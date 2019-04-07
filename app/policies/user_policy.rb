@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy[5.2]
+class UserPolicy < ApplicationPolicy
   def index
     user.admin? || user.mod?
   end
