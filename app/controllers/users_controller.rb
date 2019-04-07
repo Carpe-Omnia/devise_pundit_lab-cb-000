@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   def index
     if user_signed_in?
-      @user = authorize current_user
+      @user = current_user
     end
   end
   def update
