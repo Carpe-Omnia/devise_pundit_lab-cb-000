@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :notes
   get 'pages/about' => 'notes#about'
+  get '/signout' => 'users#signout'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
