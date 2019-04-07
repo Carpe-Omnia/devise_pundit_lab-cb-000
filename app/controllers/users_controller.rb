@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   def index
     if user_signed_in?
-      @user = authorize User.find_by(id: session[:user_id])
+      @user = authorize current_user
     end
   end
   def update
