@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def signout
     session.clear
+    flash[:alert] = "Signed out successfully."
     redirect_to '/'
   end
 
