@@ -11,10 +11,13 @@ class UsersController < ApplicationController
   end
   def update
     if user_signed_in?
-      @user = authorize current_user
+      @user = authorize User.find_by(id: params[:id])
     end
   end
   def destroy
+    if user_signed_in?
+      @user = authorize User.find_by(id: params[:id])
+    end
   end
 
 
