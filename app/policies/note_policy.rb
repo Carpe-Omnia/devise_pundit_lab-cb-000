@@ -11,4 +11,7 @@ class UserPolicy < ApplicationPolicy
   def destroy
     user.admin? || record.try(:user) == user
   end
+  def create
+    user.normal? || user.admin? || user.mod?
+  end
 end
