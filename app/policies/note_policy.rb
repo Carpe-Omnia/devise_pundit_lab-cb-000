@@ -1,17 +1,17 @@
 class UserPolicy < ApplicationPolicy
   def index?
-    user.admin?
+    user.admin? || user.mod?
   end
   def show?
-    record.id == user.id || user.admin? || user.mod?
+    record.try(:user) == user || user.admin? || user.mod?
   end
   def update?
-    record == user || user.admin?
+    record.try(:user) == user
   end
   def destroy?
     user.admin? || record.try(:user) == user
   end
   def create?
-    true
+    user.normal? || user.admin? || user.mod?
   end
 end
