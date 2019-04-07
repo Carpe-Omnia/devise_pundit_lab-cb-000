@@ -1,9 +1,9 @@
 class UserPolicy < ApplicationPolicy
   def index
-    user.admin? || user.mod?
+    true
   end
   def show
-    record.try(:user) == user || user.admin? || user.mod?
+    true
   end
   def update
     record.try(:user) == user || user.admin?
