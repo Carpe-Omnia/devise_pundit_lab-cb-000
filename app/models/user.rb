@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :notes
   has_many :viewers
   has_many :readable, through: :viewers, source: :note
+
   enum :role => [ :normal, :mod, :admin]
   after_initialize :set_default_user_role
 
