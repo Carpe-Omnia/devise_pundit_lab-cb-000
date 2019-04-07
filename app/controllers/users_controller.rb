@@ -1,20 +1,20 @@
 class UsersController < ApplicationController
-  def show?
+  def show
     if user_signed_in?
       @user = authorize User.find_by(id: params[:id])
     end
   end
-  def index?
+  def index
     if user_signed_in?
       @user = authorize User.find_by(id: session[:user_id])
     end
   end
-  def update?
+  def update
     if user_signed_in?
       @user = authorize User.find_by(id: params[:id])
     end
   end
-  def destroy?
+  def destroy
     if user_signed_in?
       @user = authorize User.find_by(id: params[:id])
     end
